@@ -20,6 +20,8 @@ import ValueCard from "@/components/ValueCard";
 import Flow from "@/components/Flow";
 import Footer from "@/components/Footer";
 import StatCard from "@/components/StatCard";
+import { protocol } from "socket.io-client";
+
 const heroImages = [
   "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80",
   "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80",
@@ -116,8 +118,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        <section className="py-24 bg-slate-50">
+         <section className="py-24 bg-slate-50">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -167,6 +168,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+       
 
         <section id="features" className="py-32 bg-white">
           <div className="container mx-auto px-6">
@@ -236,7 +239,7 @@ export default function HomePage() {
               <ValueCard
                 icon={ClipboardList}
                 title="Smart Itinerary Planning"
-                description="Plan your trips with AI-suggested safe routes, accommodations, and local emergency contacts."
+                description="Plan your trips with Geo-fenced suggested safe routes, accommodations, and local emergency contacts."
                 delay={0.2}
                 dark
               />
@@ -246,8 +249,7 @@ export default function HomePage() {
                 description="Create and manage travel groups with live location sharing and synchronized alerts."
                 delay={0.3}
                 dark
-              />
-              <ValueCard
+              /><ValueCard
                 icon={CheckCircle}
                 title="Verified Travel Partners"
                 description="Access to blockchain-verified tour operators, drivers, and accommodations across India."
@@ -268,9 +270,13 @@ export default function HomePage() {
                 delay={0.6}
                 dark
               />
+              
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+         
+        
+         
 
         {/* Call to Action */}
         <section className="py-16 bg-gradient-to-br from-amber-500 to-orange-600">
